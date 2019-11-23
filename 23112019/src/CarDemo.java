@@ -23,6 +23,14 @@ public class CarDemo {
         krasser3erBMW.antrieb = "RWD";
         System.out.println("Hersteller: " + krasser3erBMW.manufact);
 
+        System.out.println("aktueller Gang: " + krasser3erBMW.getCurrGear());
+        krasser3erBMW.setGear(3);
+        System.out.println("aktueller Gang: " + krasser3erBMW.getCurrGear());
+        krasser3erBMW.shiftGear();
+        System.out.println("aktueller Gang: " + krasser3erBMW.getCurrGear());
+        krasser3erBMW.shiftGear(2);
+        System.out.println("aktueller Gang: " + krasser3erBMW.getCurrGear());
+
     }
 
 
