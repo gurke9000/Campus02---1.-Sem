@@ -2,9 +2,15 @@ public class Bruch {
 
     private int nenner;
     private int zaehler;
+    public static int counter;
+
+    public static int getCounter() {
+        return counter;
+    }
 
     public Bruch(int zaehler, int nenner)
     {
+        counter++;
         this.nenner = nenner;
         this.zaehler = zaehler;
     }
@@ -32,6 +38,7 @@ public class Bruch {
 
     public Bruch multiplicate(Bruch b2)
     {
+        counter++;
         int Nenn = nenner*b2.getNenner();
         int Zaehl = zaehler*b2.getZaehler();
 
@@ -41,6 +48,7 @@ public class Bruch {
 
     public Bruch multiplicate(Bruch b2, Bruch b3)
     {
+        counter++;
         int Nenn = nenner*b2.getNenner()*b3.getNenner();
         int Zaehl = zaehler*b2.getZaehler()*b3.getZaehler();
 
