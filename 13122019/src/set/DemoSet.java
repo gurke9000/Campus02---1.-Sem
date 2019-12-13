@@ -1,3 +1,5 @@
+package set;
+
 import java.util.HashSet;
 
 public class DemoSet {
@@ -49,7 +51,7 @@ public class DemoSet {
         System.out.println("intersection = " + intersection);
         System.out.println("union = " + union);
         System.out.println(union.size());
-        
+
 
 
     }

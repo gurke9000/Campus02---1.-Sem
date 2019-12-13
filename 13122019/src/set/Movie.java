@@ -1,3 +1,5 @@
+package set;
+
 import java.util.Objects;
 
 public class Movie {
@@ -46,7 +48,7 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie{" +
+        return "set.Movie{" +
                 "title='" + title + '\'' +
                 ", dauer=" + dauer +
                 ", releaseDate=" + releaseDate +
