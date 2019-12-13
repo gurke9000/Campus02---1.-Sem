@@ -10,13 +10,12 @@ public class Person {
         System.out.println("lol, hier passiert etwas");
     }
 
-    /*
+
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-     */
 
     public String getFirstName() {
         return firstName;
