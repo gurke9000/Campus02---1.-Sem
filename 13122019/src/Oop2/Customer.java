@@ -2,28 +2,26 @@ package Oop2;
 
 import java.util.ArrayList;
 
-public class Customer {
+    public class Customer extends Person {
+        private int customerNumber;
+        private ArrayList<Address> addresses;
 
-    private int CostumerNumber;
+        public Customer(int customerNumber) {
+            this.customerNumber = customerNumber;
+            addresses = new ArrayList<>();
+        }
 
-    public Customer(int costumerNumber) {
-        CostumerNumber = costumerNumber;
-    }
+        public void addA (Address a)
+        {
+            addresses.add(a);
+        }
 
-    private ArrayList<Address> Addresses = new ArrayList<Address>();
-
-    public void addAddress (Address a)
-    {
-        if(!Addresses.contains(a))
-            Addresses.add(a);
-    }
-
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "CostumerNumber=" + CostumerNumber +
-                ", Addresses=" + Addresses +
-                '}';
-    }
+        @Override
+        public String toString() {
+            return "Customer{" +
+                    "firstname=" + getFirstName() +
+                    "lastname=" + getLastName() +
+                    "customerNumber=" + customerNumber +
+                    ", addresses=" + addresses +
+                    '}';
 }
