@@ -1,6 +1,6 @@
 package org.campus02.oop;
 
-public class RealEstate {
+public abstract class RealEstate {
 
     public int squaremeter;
 
@@ -12,10 +12,9 @@ public class RealEstate {
         return squaremeter;
     }
 
-    public double calcLease()
-    {
-        return squaremeter*10;
-    }
+    public abstract double calcLease();
+
+    public void setSquaremeter(int squaremeter){ this.squaremeter=squaremeter;}
 
     public int getCategory()
     {
@@ -29,3 +28,4 @@ public class RealEstate {
                 '}';
     }
 }
+

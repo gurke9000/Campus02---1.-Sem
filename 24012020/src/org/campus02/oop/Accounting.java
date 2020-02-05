@@ -3,13 +3,9 @@ package org.campus02.oop;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Accounting extends RealEstate {
+public class Accounting {
 
     private ArrayList<RealEstate> stuffs = new ArrayList<>();
-
-    public Accounting(int squaremeter, ArrayList<RealEstate> stuffs) {
-        super(squaremeter);
-    }
 
     public void add(RealEstate f)
     {
@@ -20,28 +16,41 @@ public class Accounting extends RealEstate {
     {
         for(RealEstate f: stuffs)
         {
-            System.out.println("Groesse: " + f.getSquaremeter() + "   Miete: " + f.calcLease());
+            System.out.println("Groesse: " + f.getSquaremeter() + "   Miete: " + f.calcLease() + "\n");
         }
     }
 
     public double getOverallLease()
     {
-        double avg = 0;
+        double sum = 0;
         for(RealEstate f: stuffs)
         {
-            avg += f.calcLease();
+            sum += f.calcLease();
         }
 
-        return avg / stuffs.size();
+        return sum;
+    }
+
+    public double getAvgLease()
+    {
+        return getOverallLease() / stuffs.size();
     }
 
     public HashMap<Integer, Double> getRealEstateInCategory()
     {
-        int counter = 0;
+        HashMap<Integer, Double> map = new HashMap<>();
         for(RealEstate f: stuffs)
         {
-            f.getCategory();
-            counter++;
+            if(map.containsKey(f.getCategory()))
+            {
+                double value = map.get(f.getCategory());
+                value += 1;
+                map.put(f.getCategory(), value);
+            }
+            else
+                map.put(f.getCategory(), 1.0);
         }
+
+        return map;
     }
 }

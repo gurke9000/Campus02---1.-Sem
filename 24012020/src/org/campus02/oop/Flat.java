@@ -7,10 +7,29 @@ public class Flat extends RealEstate {
     public int countRoom;
     public String type;
 
+
+    public static final String Low = "Low";
+    public static final String High = "High";
+    public static final String Standard = "Standard";
+    public static final String Undefined = "Undefined";
+
+
     public Flat(int squaremeter, int countRoom, String type) {
         super(squaremeter);
         this.countRoom = countRoom;
-        this.type = type;
+
+
+        if(type.equalsIgnoreCase(Low))
+            this.type = Low;
+        else if(type.equalsIgnoreCase(High))
+            this.type=High;
+        else if(type.equalsIgnoreCase(Standard))
+            this.type=Standard;
+        else
+        {
+            System.out.println(type + " gibbet nüsch als Type");
+            this.type=Undefined;
+        }
     }
 
     public int getCountRoom() {
